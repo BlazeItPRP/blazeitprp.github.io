@@ -76,6 +76,20 @@
             margin-top: 10px;
             display: none;
         }
+        /* Align markdown content to the left */
+        #markdownContent {
+            text-align: left;  /* Left-align the markdown content */
+            margin: 0 auto;    /* Center the content container */
+            padding: 0 20px;   /* Add padding to the left and right of the content */
+            max-width: 800px;  /* Set a max-width to prevent wide content on larger screens */
+        }
+        /* Ensure lists and other elements are aligned to the left */
+        #markdownContent ul, #markdownContent ol {
+            margin-left: 20px;
+        }
+        #markdownContent li {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
