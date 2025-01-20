@@ -120,11 +120,8 @@
                 document.getElementById('passwordPrompt').style.display = 'none';
                 content.style.display = 'block';
 
-                // Reapply scroll lock functionality when the content is displayed
-                setupScrollLock();
-
                 // Fetch and display the hiring process content
-                fetch('EmployeeHiringProcess.md') // The path to your Markdown file
+                fetch('EmployeeHiringProcess.md') // Path to your Markdown file
                     .then(response => response.text())
                     .then(markdown => {
                         // Convert the Markdown to HTML
@@ -144,26 +141,6 @@
         function convertMarkdownToHTML(markdown) {
             var converter = new showdown.Converter();
             return converter.makeHtml(markdown);
-        }
-
-        function setupScrollLock() {
-            const iframe = document.querySelector('iframe');
-
-            iframe.addEventListener('mouseenter', () => {
-                scrollPosition = window.pageYOffset;
-                document.body.style.position = 'fixed';
-                document.body.style.top = `-${scrollPosition}px`;
-                document.body.style.left = '0';
-                document.body.style.right = '0';
-            });
-
-            iframe.addEventListener('mouseleave', () => {
-                document.body.style.position = '';
-                document.body.style.top = '';
-                document.body.style.left = '';
-                document.body.style.right = '';
-                window.scrollTo(0, scrollPosition); // Restore scroll position
-            });
         }
     </script>
 
