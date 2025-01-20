@@ -96,6 +96,13 @@
         #markdownContent li {
             margin-bottom: 10px;
         }
+        /* Styling for nested lists */
+        #markdownContent ul ul, #markdownContent ol ol {
+            margin-left: 20px; /* Indent sublists */
+        }
+        #markdownContent ul ul li, #markdownContent ol ol li {
+            margin-bottom: 8px; /* Space between items */
+        }
     </style>
 </head>
 <body>
