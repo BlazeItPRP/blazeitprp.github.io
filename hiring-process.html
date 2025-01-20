@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Hiring Process - Blaze It Dispensary</title>
+    <script src="node_modules/showdown/dist/showdown.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #415134;
+            color: #78A94E;
+            text-shadow: 1px 1px 2px black;
+            text-align: center;
+            overflow: auto;
+        }
+        header {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-bottom: 2px solid #78A85A;
+        }
+        header img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #78A85A;
+            font-weight: bold;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #A9D999;
+        }
+        #passwordPrompt {
+            margin-top: 50px;
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #78A85A;
+            color: #415134;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #A9D999;
+        }
+        .content {
+            display: none;
+            margin-top: 20px;
+        }
+        .shop-image {
+            max-width: 100%;
+            height: auto;
+            opacity: 0.85; /* Slight opacity for blending */
+            border-radius: 10px; /* Rounded corners for styling */
+            margin-bottom: 20px; /* Space below the image */
+        }
+        footer {
+            margin-top: 30px;
+            padding: 10px 0;
+            background-color: #415134;
+            color: rgb(169, 217, 153);
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Blaze It Employee Hiring Process</h1>
+    </header>
+
+    <nav>
+        <a href="/home.html">Home</a>
+        <a href="/menu.html">Menu</a>
+        <a href="https://forms.gle/nU3o6gqRxbQ5HfTZ9" target="_blank">Delivery Order</a>
+    </nav>
+
+    <div id="passwordPrompt">
+        <p>Please enter the employee passcode:</p>
+        <!-- Changed input type to password -->
+        <input type="password" id="passwordInput" placeholder="Enter Passcode">
+        <button onclick="checkPassword()">Submit</button>
+        <p id="errorMessage" class="error">Invalid passcode. Please try again.</p>
+    </div>
+
+    <div class="content">
+        <h2>Employee Hiring Process</h2>
+        <div id="markdownContent">
+            <!-- Content will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <script>
+        let scrollPosition = 0; // To store scroll position
+
+        // Function to check authentication
+        function checkPassword() {
+            const input = document.getElementById('passwordInput').value;
+            const content = document.querySelector('.content');
+            const errorMessage = document.getElementById('errorMessage');
+
+            const validPasscode = "WestCoastWeed420"; // Replace with your passcode
+
+            if (input === validPasscode) {
+                // Hide the password prompt and show the content
+                document.getElementById('passwordPrompt').style.display = 'none';
+                content.style.display = 'block';
+
+                // Reapply scroll lock functionality when the content is displayed
+                setupScrollLock();
+
+                // Fetch and display the hiring process content
+                fetch('EmployeeHiringProcess.md') // The path to your Markdown file
+                    .then(response => response.text())
+                    .then(markdown => {
+                        // Convert the Markdown to HTML
+                        var html = convertMarkdownToHTML(markdown);
+                        // Insert the HTML into the page
+                        document.getElementById('markdownContent').innerHTML = html;
+                    })
+                    .catch(error => {
+                        console.error('Error loading the hiring process:', error);
+                    });
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        }
+
+        // Function to convert Markdown to HTML using Showdown.js
+        function convertMarkdownToHTML(markdown) {
+            var converter = new showdown.Converter();
+            return converter.makeHtml(markdown);
+        }
+
+        function setupScrollLock() {
+            const iframe = document.querySelector('iframe');
+
+            iframe.addEventListener('mouseenter', () => {
+                scrollPosition = window.pageYOffset;
+                document.body.style.position = 'fixed';
+                document.body.style.top = `-${scrollPosition}px`;
+                document.body.style.left = '0';
+                document.body.style.right = '0';
+            });
+
+            iframe.addEventListener('mouseleave', () => {
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.left = '';
+                document.body.style.right = '';
+                window.scrollTo(0, scrollPosition); // Restore scroll position
+            });
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Blaze It Dispensary</p>
+    </footer>
+
+</body>
+</html>
