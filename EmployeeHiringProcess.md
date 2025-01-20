@@ -1,5 +1,5 @@
 ## 1. Application Phase
-`Phase Process:`
+### Phase Process:
 - Candidates submit their applications via the Application Form.
 - The submission is then received in the management inbox (#job-applications)
 - Management verify the completeness and qualifications of candidate.
@@ -10,7 +10,7 @@
   - Acceptance: Proceed to the Processing Phase.
   - Rejection: Send a polite rejection notice.
 
-`Application Rejection Notice`
+### Application Rejection Notice
 ```
 Subject: Blaze It Dispensary Application Status
 
@@ -25,7 +25,7 @@ Best regards,
 Blaze It Dispensary Management
 ```
 
-`Application Acceptance Notice`
+### Application Acceptance Notice
 ```
 Subject: Application Update - Blaze It Dispensary
 
@@ -39,13 +39,13 @@ Blaze It Dispensary Management
 ```
 
 ## 2. Processing Phase
-`Phase Process:`
+### Phase Process:
 - Management team reviews and discusses applications in the newly opened thread.
 - Management team then make a joint decision on whether or not to move forward:
   - Approval: Proceed to the Background Check Phase.
   - Denial: Send a rejection notice.
 
-`Processing Rejection Notice`
+### Processing Rejection Notice
 ```
 Subject: Blaze It Dispensary Application Status
 
@@ -59,13 +59,13 @@ Blaze It Dispensary Management
 ```
 
 ## 3. Background Check Phase
-`Phase Process:`
+### Phase Process:
 - Management request a background check (check for no drug convictions or violent felonies).
 - Management make a decision to move forward based on the candidate's criminal record:
   - Pass: Proceed to the Scheduling Phase.
   - Fail: Send a rejection notice.
 
-`Background Check Rejection Notice`
+### Background Check Rejection Notice
 ```
 Subject: Blaze It Dispensary Application Status
 
@@ -81,11 +81,11 @@ Blaze It Dispensary Management
 ```
 
 ## 4. Scheduling Phase
-`Phase Process:`
+### Phase Process:
 - Management team send the candidate an invitation with interview details.
 - Management team confirm attendance and send a reminder before the interview.
 
-`Interview Invitation`
+### Interview Invitation
 ```
 Subject: Interview Invitation - Blaze It Dispensary
 
@@ -107,7 +107,7 @@ Blaze It Dispensary Management
 ```
 
 ## 5. Interview Phase
-`Phase Process:`
+### Phase Process:
 - Conduct the interview (use standard questions).
   - How familiar are you with cannabis products and their uses? Do you have any personal or professional experience in this area?
   - Are you familiar with the state's legal regulations regarding the sale of cannabis products?
@@ -116,7 +116,7 @@ Blaze It Dispensary Management
   - Pass: Extend a job offer and proceed to the Training Phase.
   - Fail: Send a rejection notice.
 
-`Interview Reminder`
+### Interview Reminder
 ```
 Subject: Reminder - Interview Scheduled with Blaze It Dispensary
 
@@ -135,7 +135,7 @@ Best regards,
 Blaze It Dispensary Management
 ```
 
-`Post-Interview Rejection Notice`
+### Post-Interview Rejection Notice
 ```
 Subject: Blaze It Dispensary Interview Outcome
 
@@ -150,7 +150,7 @@ Sincerely,
 Blaze It Dispensary Management
 ```
 
-`Job Offer`
+### Job Offer
 ```
 Subject: Blaze It Dispensary - Job Offer
 
@@ -170,11 +170,11 @@ Blaze It Dispensary Management
 ```
 
 ## 6. Training Phase
-`Phase Process:`
+### Phase Process:
 - Management team onboard the new hire with training objectives and materials.
 - Management train them in company policies, product knowledge, and job responsibilities.
 - Management evaluate their performance throughout a 14–30 day probation period.
 
 ## 7. Full-Time Employment
-`Phase Process:`
+### Phase Process:
 - Management finalizes the employee's full-time status & removes trainee roles.
